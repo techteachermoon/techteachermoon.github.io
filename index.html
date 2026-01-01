@@ -1,21 +1,144 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 프로그램 저장소</title>
+    <style>
+        /* ========================================= */
+        /* ★ 여기서 색상을 마음대로 바꾸세요! ★ */
+        :root {
+            --main-color: #007bff;  /* 지금은 파란색입니다. 원하는 색코드(#...)로 바꾸세요 */
+            --text-color: #222222;  /* 글자색 */
+            --bg-color: #ffffff;    /* 배경색 */
+        }
+        /* ========================================= */
 
-# 👋 안녕하세요! TechTeacherMoon입니다.
-이곳은 제가 만든 유용한 프로그램들을 배포하는 공간입니다.
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
----
+        /* 상단 네비게이션 */
+        nav {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-weight: bold; font-size: 1.2rem; text-decoration: none; color: black; }
 
-## 💾 프로그램 리스트
+        /* 메인 히어로 섹션 (Ubuild 스타일) */
+        .hero {
+            max-width: 800px;
+            margin: 80px auto 60px;
+            padding: 0 20px;
+        }
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
 
-### 1. 업무 자동화 툴 (AutoWork) v1.0
-매일 하는 엑셀 작업을 버튼 한 번으로 끝내주는 프로그램입니다.
-- **[📥 다운로드 받기 (클릭)](여기에_릴리즈_링크_넣기)**
+        /* 버튼 스타일 */
+        .btn {
+            display: inline-block;
+            background-color: var(--main-color);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px; /* 살짝 둥글게 */
+            transition: opacity 0.2s;
+        }
+        .btn:hover { opacity: 0.9; }
 
-### 2. 이미지 변환기 v2.0
-고화질 사진 용량을 1/10로 줄여줍니다. 블로그 운영 필수템!
-- **[📥 다운로드 받기 (클릭)](여기에_릴리즈_링크_넣기)**
+        /* 프로그램 리스트 섹션 */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px 100px;
+        }
+        .program-item {
+            border-top: 2px solid #eee;
+            padding: 40px 0;
+            display: flex;
+            justify-content: space-between; /* 양쪽 정렬 */
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .program-info h3 { margin: 0 0 10px 0; font-size: 1.5rem; }
+        .program-info p { margin: 0; color: #555; }
+        .version-tag {
+            background: #eee;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        
+        /* 모바일 최적화 */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            .program-item { flex-direction: column; align-items: flex-start; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
 
----
-*Created by TechTeacherMoon*
+    <nav>
+        <a href="#" class="logo">TechTeacherMoon</a>
+        <!-- 필요하면 우측 메뉴 추가 -->
+    </nav>
+
+    <div class="hero">
+        <h1>
+            필요한 도구를<br>
+            <span style="color: var(--main-color);">직접 만듭니다.</span>
+        </h1>
+        <p class="subtitle">
+            반복되는 귀찮은 작업들, 이제 프로그램에게 맡기세요.<br>
+            제가 직접 만들고 검증한 유틸리티들입니다.
+        </p>
+        <!-- 메인 프로그램 다운로드 강조 -->
+        <a href="여기에_릴리즈_링크" class="btn">최신 프로그램 다운로드</a>
+    </div>
+
+    <div class="container">
+        <!-- 리스트 1 -->
+        <div class="program-item">
+            <div class="program-info">
+                <h3>📂 업무 자동화 툴 <span class="version-tag">v1.0</span></h3>
+                <p>엑셀, 한글 파일 정리를 한방에 끝내줍니다.</p>
+            </div>
+            <div>
+                <a href="여기에_링크" style="color: var(--main-color); font-weight: bold; text-decoration: none;">다운로드 →</a>
+            </div>
+        </div>
+
+        <!-- 리스트 2 -->
+        <div class="program-item">
+            <div class="program-info">
+                <h3>🖼️ 이미지 변환기 <span class="version-tag">v2.1</span></h3>
+                <p>WebP, PNG 변환을 지원하는 초경량 툴.</p>
+            </div>
+            <div>
+                <a href="여기에_링크" style="color: var(--main-color); font-weight: bold; text-decoration: none;">다운로드 →</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
